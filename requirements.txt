@@ -1,4 +1,7 @@
 Flask==3.0.3
 launchdarkly-server-sdk-ai
+launchdarkly-server-sdk
 flask-cors
 openai
+python-dotenv
+gunicorn

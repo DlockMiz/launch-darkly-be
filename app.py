@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import ldclient
 from ldclient import Context
@@ -16,7 +16,14 @@ aiclient = LDAIClient(ldclient.get())
 openai_client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5000", "http://127.0.0.1:5000", "http://localhost:5173", "http://127.0.0.1:5173"])
+CORS(app, origins=[
+    "http://localhost:5000",
+    "http://127.0.0.1:5000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://launchdarklydemo-env.eba-k3kcg8hp.us-east-2.elasticbeanstalk.com"
+    r"https://events.launchdarkly.com"
+], supports_credentials=True, allow_headers="*")
 
 @app.route('/context', methods=['POST'])
 def create_context():
@@ -51,5 +58,10 @@ def create_context():
     )
     return completion.choices[0].message.content, 200
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/')
+def serve_index():
+    return send_from_directory('static', 'index.html')
+
+@app.route('/assets/<path:filename>')
+def serve_assets(filename):
+    return send_from_directory('static/assets', filename)

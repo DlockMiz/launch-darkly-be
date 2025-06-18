@@ -4,3 +4,5 @@ venv/
 *.pyc
 .github/
 .vscode/
+static/
+launch-darkly-demo.zip
