@@ -101,3 +101,18 @@ Experiment results and analysis are available in the LaunchDarkly dashboard, all
 
 This setup allows for dynamic, personalized AI interactions, leveraging LaunchDarkly's targeting and experimentation capabilities to deliver tailored experiences for different user groups.
 
+---
+
+## LaunchDarkly Configuration Pictures
+
+For visual reference, see the configuration screenshots in the `LD Configuration Pictures` folder:
+
+- **Flags:** ![Flags](LD%20Configuration%20Pictures/Flags.png)
+- **Segments:** ![Segments](LD%20Configuration%20Pictures/Segments.png)
+- **Metrics:** ![Metrics](LD%20Configuration%20Pictures/Metrics.png)
+- **Experiment Design:** ![Experiment Design](LD%20Configuration%20Pictures/Expirement%20Design.png)
+- **AI Config Variations:** ![AI Config Variations](LD%20Configuration%20Pictures/AI%20Config%20Variations.png)
+- **AI Config Targeting:** ![AI Config Targeting](LD%20Configuration%20Pictures/AI%20Config%20Targeting.png)
+
+These images show the actual LaunchDarkly setup for flags, segments, metrics, experiments, and AI config used in this project.
+

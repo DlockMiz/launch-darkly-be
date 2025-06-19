@@ -6,3 +6,4 @@ venv/
 .vscode/
 static/
 launch-darkly-demo.zip
+.DS_Store
